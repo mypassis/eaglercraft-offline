@@ -33,12 +33,15 @@ Loading the JavaScript beside `index.html` is not enough.
 - `.ai halt` — stop every AI task immediately.
 - `.ai pet` or `.ai pet follow` — find the nearest exposed cow, pig, sheep, chicken, wolf, cat, rabbit, or horse and try to guide it toward you.
 - `.ai pet stop` — stop controlling the selected animal.
+- `.ai agent <task>` — send a natural-language task to the AI and start autonomous mode. Example: `.ai agent follow me, defend me, and prepare a small house`.
 - `.ai clear` — clear conversation memory.
 - `.ai status` — show model, key status, follow state, and the last build report.
 
 The AI can also request `[BUILD:house]`, `[BUILD:tower]`, `[BUILD:bridge]`, `[MINE:tunnel]`, `[DEFEND]`, `[AUTO]`, or `[HALT]` in its response. Building only places blocks if this particular build exposes a compatible `ModAPI.world.setBlockState` or `ModAPI.world.setBlock` function with the expected signature. Mining and defense likewise depend on exposed block-breaking, entity-list, and attack APIs. Otherwise, the mod reports that a plan or API is unavailable instead of falsely claiming success.
 
 Auto mode is intentionally bounded and can be stopped at any time with `.ai halt`. It does not automatically send arbitrary chat, spend items, bypass permissions, or use server commands.
+
+Agent mode is a task planner, not an unrestricted computer-control system. It converts the request into the Mod's supported actions such as follow, pet, mine, defend, and build. Use `.ai halt` to stop the agent immediately.
 
 Pet Mode does not create a new animal. It controls only an animal that already exists in the game and only when the client exposes mutable entity movement fields. On many builds, animals may be read-only; in that case the Mod reports that control is unavailable.
 

@@ -16,4 +16,4 @@ The mod is not automatically injected into the game. Load it through a compatibl
 
 ## New commands
 
-Use `.ai pet`, `.ai pet stop`, `.ai mine`, `.ai defend`, `.ai auto`, and `.ai halt` for bounded local tasks. Pet Mode attempts to guide an existing in-game animal; it does not create a fake HUD character. See `MOD-SETUP.md` for compatibility details.
+Use `.ai agent <task>` to give the AI a natural-language task, for example `.ai agent follow me and defend me`. You can stop it with `.ai halt`. Other bounded commands include `.ai pet`, `.ai pet stop`, `.ai mine`, `.ai defend`, and `.ai auto`. Pet Mode attempts to guide an existing in-game animal; it does not create a fake HUD character. See `MOD-SETUP.md` for compatibility details.
