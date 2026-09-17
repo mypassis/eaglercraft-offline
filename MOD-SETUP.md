@@ -1,8 +1,8 @@
-# AI Player Companion v4.0 Setup
+# AI Player Companion v4.1 Setup
 
 ## What changed
 
-Version 4.0 adds an experimental in-game **Pet Mode** for existing animals, task queues, multi-step agent planning, optional screenshot vision, browser voice commands, reliable follow state, build plans, bounded mining and defense tasks, an autonomous mode, safer teleport handling, configurable companion name, faster local command handling, and clearer failure messages.
+Version 4.1 adds an experimental **AI player controller**: the agent can control the current player's movement, turning, jumping, waiting, and targeted block breaking. It also includes Pet Mode for existing animals, task queues, multi-step agent planning, optional screenshot vision, browser voice commands, reliable follow state, build plans, bounded mining and defense tasks, safer teleport handling, and clearer failure messages.
 
 ## Important compatibility truth
 
@@ -34,6 +34,7 @@ Loading the JavaScript beside `index.html` is not enough.
 - `.ai pet` or `.ai pet follow` — find the nearest exposed cow, pig, sheep, chicken, wolf, cat, rabbit, or horse and try to guide it toward you.
 - `.ai pet stop` — stop controlling the selected animal.
 - `.ai agent <task>` — send a natural-language task to the AI and start autonomous mode. Example: `.ai agent follow me, defend me, and prepare a small house`.
+- The agent may return control tags such as `[MOVE:forward:2]`, `[TURN:left:90]`, `[JUMP]`, `[BREAK]`, and `[WAIT:1]`; the Mod executes them using your current player.
 - `.ai queue add <task>` — add a task to the agent queue.
 - `.ai queue show` — show queued tasks.
 - `.ai queue clear` — clear queued tasks.
@@ -47,6 +48,8 @@ The AI can also request `[BUILD:house]`, `[BUILD:tower]`, `[BUILD:bridge]`, `[MI
 Auto mode is intentionally bounded and can be stopped at any time with `.ai halt`. It does not automatically send arbitrary chat, spend items, bypass permissions, or use server commands.
 
 Agent mode is a task planner, not an unrestricted computer-control system. It converts the request into the Mod's supported actions such as follow, pet, mine, defend, and build. Use `.ai halt` to stop the agent immediately.
+
+In v4.1, Agent mode can temporarily control the current player, so you can watch it play through your own character. Use `.ai halt` immediately whenever you want control back. The controller only uses client-exposed movement and click APIs; it cannot bypass server permissions or guarantee that every action succeeds.
 
 Vision uses the largest canvas on the page and sends a compressed screenshot to the configured API. Voice recognition is provided by the browser and may not be available in every browser. Both features can send information outside the game to the endpoint you configured, so enable them only when you understand the privacy implications.
 
