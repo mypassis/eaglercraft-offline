@@ -1,8 +1,8 @@
-# AI Player Companion v4.1 Setup
+# AI Player Companion v4.2 Setup
 
 ## What changed
 
-Version 4.1 adds an experimental **AI player controller**: the agent can control the current player's movement, turning, jumping, waiting, and targeted block breaking. It also includes Pet Mode for existing animals, task queues, multi-step agent planning, optional screenshot vision, browser voice commands, reliable follow state, build plans, bounded mining and defense tasks, safer teleport handling, and clearer failure messages.
+Version 4.2 adds an experimental **AI player controller**: the agent can control the current player's walking in four directions, turning, looking up/down, jumping, flying up/down when supported, sprinting, sneaking, placing, attacking, waiting, and targeted block breaking. It also includes Pet Mode for existing animals, task queues, multi-step agent planning, optional screenshot vision, browser voice commands, reliable follow state, build plans, bounded mining and defense tasks, safer teleport handling, and clearer failure messages.
 
 ## Important compatibility truth
 
@@ -34,7 +34,7 @@ Loading the JavaScript beside `index.html` is not enough.
 - `.ai pet` or `.ai pet follow` — find the nearest exposed cow, pig, sheep, chicken, wolf, cat, rabbit, or horse and try to guide it toward you.
 - `.ai pet stop` — stop controlling the selected animal.
 - `.ai agent <task>` — send a natural-language task to the AI and start autonomous mode. Example: `.ai agent follow me, defend me, and prepare a small house`.
-- The agent may return control tags such as `[MOVE:forward:2]`, `[TURN:left:90]`, `[JUMP]`, `[BREAK]`, and `[WAIT:1]`; the Mod executes them using your current player.
+- The agent may return control tags such as `[MOVE:forward:2]`, `[TURN:left:90]`, `[LOOK:up:20]`, `[JUMP]`, `[FLY:up:2]`, `[SPRINT:on]`, `[SNEAK:on]`, `[PLACE]`, `[ATTACK]`, `[BREAK]`, and `[WAIT:1]`; the Mod executes the whole sequence using your current player.
 - `.ai queue add <task>` — add a task to the agent queue.
 - `.ai queue show` — show queued tasks.
 - `.ai queue clear` — clear queued tasks.
