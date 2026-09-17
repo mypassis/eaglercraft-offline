@@ -1,6 +1,6 @@
 # Eaglercraft Offline + AI Player Companion
 
-This public repository contains a standalone Eaglercraft HTML build and the experimental **AI Player Companion v3.0** mod.
+This public repository contains a standalone Eaglercraft HTML build and the experimental **AI Player Companion v3.1** mod.
 
 ## Files
 
@@ -16,4 +16,4 @@ The mod is not automatically injected into the game. Load it through a compatibl
 
 ## New commands
 
-Use `.ai mine`, `.ai defend`, `.ai auto`, and `.ai halt` for bounded local tasks. See `MOD-SETUP.md` for compatibility details.
+Use `.ai pet`, `.ai pet stop`, `.ai mine`, `.ai defend`, `.ai auto`, and `.ai halt` for bounded local tasks. Pet Mode attempts to guide an existing in-game animal; it does not create a fake HUD character. See `MOD-SETUP.md` for compatibility details.
