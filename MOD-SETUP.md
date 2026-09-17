@@ -1,8 +1,8 @@
-# AI Player Companion v3.1 Setup
+# AI Player Companion v4.0 Setup
 
 ## What changed
 
-Version 3.1 adds an experimental in-game **Pet Mode** for existing animals, plus reliable follow state, build plans, bounded mining and defense tasks, an autonomous mode, safer teleport handling, configurable companion name, faster local command handling, and clearer failure messages.
+Version 4.0 adds an experimental in-game **Pet Mode** for existing animals, task queues, multi-step agent planning, optional screenshot vision, browser voice commands, reliable follow state, build plans, bounded mining and defense tasks, an autonomous mode, safer teleport handling, configurable companion name, faster local command handling, and clearer failure messages.
 
 ## Important compatibility truth
 
@@ -34,6 +34,11 @@ Loading the JavaScript beside `index.html` is not enough.
 - `.ai pet` or `.ai pet follow` — find the nearest exposed cow, pig, sheep, chicken, wolf, cat, rabbit, or horse and try to guide it toward you.
 - `.ai pet stop` — stop controlling the selected animal.
 - `.ai agent <task>` — send a natural-language task to the AI and start autonomous mode. Example: `.ai agent follow me, defend me, and prepare a small house`.
+- `.ai queue add <task>` — add a task to the agent queue.
+- `.ai queue show` — show queued tasks.
+- `.ai queue clear` — clear queued tasks.
+- `.ai vision on` / `.ai vision off` — optionally send a game canvas screenshot with agent requests. The configured AI model must support image input.
+- `.ai voice` / `.ai voice stop` — enable or disable browser speech recognition. Say a task or say “halt”.
 - `.ai clear` — clear conversation memory.
 - `.ai status` — show model, key status, follow state, and the last build report.
 
@@ -42,6 +47,8 @@ The AI can also request `[BUILD:house]`, `[BUILD:tower]`, `[BUILD:bridge]`, `[MI
 Auto mode is intentionally bounded and can be stopped at any time with `.ai halt`. It does not automatically send arbitrary chat, spend items, bypass permissions, or use server commands.
 
 Agent mode is a task planner, not an unrestricted computer-control system. It converts the request into the Mod's supported actions such as follow, pet, mine, defend, and build. Use `.ai halt` to stop the agent immediately.
+
+Vision uses the largest canvas on the page and sends a compressed screenshot to the configured API. Voice recognition is provided by the browser and may not be available in every browser. Both features can send information outside the game to the endpoint you configured, so enable them only when you understand the privacy implications.
 
 Pet Mode does not create a new animal. It controls only an animal that already exists in the game and only when the client exposes mutable entity movement fields. On many builds, animals may be read-only; in that case the Mod reports that control is unavailable.
 
