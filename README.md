@@ -1,19 +1,15 @@
-# Eaglercraft Offline + AI Player Mod
+# Eaglercraft Offline + AI Player Companion
 
-This public repository contains a standalone Eaglercraft HTML build and an experimental AI Player mod.
+This public repository contains a standalone Eaglercraft HTML build and the experimental **AI Player Companion v2.0** mod.
 
 ## Files
 
-- `index.html` — the standalone Eaglercraft build.
-- `ai-player.js` — the AI Player script.
-- `MOD-SETUP.md` — compatibility, installation, and security notes.
+- `index.html` — standalone Eaglercraft build.
+- `ai-player.js` — updated ModAPI/EaglerForge-style companion mod.
+- `MOD-SETUP.md` — installation, commands, compatibility, and security notes.
 
 ## GitHub Pages
 
-The game is intended to be available from the repository's GitHub Pages site:
-
 https://mypassis.github.io/eaglercraft-offline/
 
-## Important
-
-The AI Player is not automatically injected into `index.html`. It is a ModAPI/EaglerForge-style mod and must be loaded using a compatible mod loader. Read `MOD-SETUP.md` before using it.
+The mod is not automatically injected into the game. Load it through a compatible ModAPI/EaglerForge loader.
